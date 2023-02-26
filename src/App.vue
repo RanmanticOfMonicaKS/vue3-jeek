@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="v-container">
+    <div class="v-text">{{ num }}</div>
+    <button @click="click">点击+1</button>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+ import { ref } from "vue";
+ const num = ref(0)
+ const click = () => {
+   num.value ++
+ }
+ 
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.v-container {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
 }
 </style>
